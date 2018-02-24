@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="mean-stack example application">
+    <meta name="author" content="Bogdan Shishkin">
+
+    <title>Top navbar example for Bootstrap</title>
+
+    <script src="assets/js/angular/angular.js"></script>
+    <script src="assets/js/angular/angular-route.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/routes.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+</head>
+<body ng-app="userApp">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" type="button"
+                    data-toggle="collapse" class="navbar-toggle collapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">Bootstrap theme</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="about">About</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">Other</li>
+                        <li><a href="#">Somewhere</a></li>
+                        <li><a href="#">Anywhere</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container theme-showcase" role="main">
+    <div class="jumbotron">
+        <h1>Theme example</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque et inventore magnam mollitia officiis quam,
+            qui quis repudiandae ullam voluptatum! Cum maxime natus suscipit tempore tenetur! Ad facere natus, odit
+            similique veritatis voluptatem! Aspernatur culpa error ex necessitatibus nulla porro.</p>
+    </div>
+
+    <div ng-view></div>
+
+</div>
+
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>
