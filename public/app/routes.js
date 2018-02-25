@@ -5,7 +5,12 @@ angular.module('appRoutes', ['ngRoute'])
                 templateUrl: 'app/views/pages/home.html'
             })
             .when('/about', {
-                templateUrl: 'app/views/pages/about.html'
+                templateUrl: 'app/views/pages/about.html',
+            })
+            .when('/register', {
+                templateUrl: 'app/views/pages/user/register.html',
+                controller: 'regController',
+                controllerAs: 'register'
             })
             .otherwise({
                 redirectTo: '/'

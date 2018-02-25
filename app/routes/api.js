@@ -9,14 +9,14 @@ module.exports = function (router) {
         if (req.body.username == null || req.body.username == "" ||
             req.body.password == null || req.body.password == "" ||
             req.body.email == null || req.body.email == "") {
-            res.send(`ensure username, email and password were provided`);
+            res.json({success: false, message: `ensure username, email and password were provided`})
         } else {
             user.save(function (err) {
                 if (err) {
-                    res.send(`such user already exists!`);
+                    res.json({success: false, message: `such user already exists!`});
                 }
                 else {
-                    res.send(`user created: ${user.username}`);
+                    res.json({success: true, message: `user created: ${user.username}`});
                 }
             });
         }
