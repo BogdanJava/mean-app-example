@@ -1,9 +1,7 @@
 angular.module('userController', ['userServices'])
 
-    .controller('regController', function ($http, $location, $timeout, User) {
-
-        var app = this;
-
+    .controller('regController', function ($location, $timeout, User) {
+        let app = this;
         this.regUser = function () {
             app.loading = true;
             app.errorMsg = false;
@@ -12,11 +10,9 @@ angular.module('userController', ['userServices'])
                 app.loading = false;
                 if (data.data.success) {
                     app.successMsg = data.data.message;
-
-                    //redirect to homepage
                     $timeout(() => {
                         $location.path('/');
-                    }, 2000)
+                    }, 2000);
                 } else {
                     app.errorMsg = data.data.message;
                 }

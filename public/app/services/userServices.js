@@ -7,5 +7,6 @@ angular.module('userServices', [])
        return $http.post('/api/users', regData);
     };
 
+
    return userFactory;
 });
