@@ -20,6 +20,9 @@ angular.module('appRoutes', ['ngRoute'])
             .when('/logout', {
                 templateUrl: 'app/views/pages/user/logout.html'
             })
+            .when('/profile', {
+                templateUrl: 'app/views/pages/user/profile.html'
+            })
             .otherwise({
                 redirectTo: '/'
             });

@@ -51,4 +51,20 @@ angular.module('authServices', [])
         };
 
         return authTokenFactory;
+    })
+
+    .factory('AuthInterceptors', function (AuthToken) {
+        let authInterceptorsFactory = {};
+
+        authInterceptorsFactory.request = function (config) {
+            let token = AuthToken.getToken();
+
+            if (token) {
+                config.headers['x-access-token'] = token;
+            }
+
+            return config;
+        };
+
+        return authInterceptorsFactory;
     });
