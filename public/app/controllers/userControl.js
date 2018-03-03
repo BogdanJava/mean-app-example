@@ -29,4 +29,15 @@ angular.module('userController', ['userServices'])
             Auth.facebook($routeParams.token);
             $location.path('/');
         }
+    })
+
+    .controller('vkController', function ($window, $routeParams, Auth, $location) {
+        let app = this;
+
+        if ($window.location.pathname == '/vkerror') {
+            app.errorMsg = 'Vk e-mail not found'
+        } else {
+            Auth.vk($routeParams.token);
+            $location.path('/');
+        }
     });

@@ -35,6 +35,11 @@ angular.module('authServices', [])
             AuthToken.setToken(token);
         };
 
+        //AuthToken.vk(token);
+        authFactory.vk = function (token) {
+            AuthToken.setToken(token);
+        };
+
         return authFactory;
     })
 

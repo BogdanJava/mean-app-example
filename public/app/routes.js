@@ -33,6 +33,16 @@ angular.module('appRoutes', ['ngRoute'])
                 controller: 'facebookController',
                 controllerAs: 'facebook'
             })
+            .when('/vkontakte/:token', {
+                templateUrl: 'app/views/pages/user/social/social.html',
+                controller: 'vkController',
+                controllerAs: 'vk'
+            })
+            .when('/vkerror', {
+                templateUrl: 'app/views/pages/user/login.html',
+                controller: 'vkController',
+                controllerAs: 'vk'
+            })
             .otherwise({
                 redirectTo: '/'
             });

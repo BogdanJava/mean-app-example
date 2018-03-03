@@ -20,6 +20,11 @@ angular.module('loginController', ['authServices'])
             }
         });
 
+        this.vk = function () {
+            $window.location = $window.location.protocol + '//' + $window.location.host
+                + '/auth/vkontakte';
+        };
+
         this.facebook = function () {
             $window.location = $window.location.protocol + '//' + $window.location.host
                 + '/auth/facebook'
