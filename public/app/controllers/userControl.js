@@ -18,4 +18,15 @@ angular.module('userController', ['userServices'])
                 }
             })
         }
+    })
+
+    .controller('facebookController', function ($window, $routeParams, Auth, $location) {
+        let app = this;
+
+        if ($window.location.pathname == '/facebookerror') {
+            app.errorMsg = 'Facebook e-mail not found'
+        } else {
+            Auth.facebook($routeParams.token);
+            $location.path('/');
+        }
     });

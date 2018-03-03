@@ -7,6 +7,8 @@ var bodyParser = require('body-parser');
 var router = express.Router();
 var appRoutes = require('./app/routes/api')(router);
 var path = require('path');
+let passport = require('passport');
+let social = require('./app/passport/passport')(app, passport);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -22,8 +24,9 @@ mongoose.connect('mongodb://localhost:27017/test', function (err) {
     }
 });
 
-app.get("/", function (req, res) {
-   res.sendFile(path.join(__dirname + "/public/app/views/index.html"));
+
+app.get("*", function (req, res) {
+   res.sendFile(path.join(__dirname + "/public/index.html"));
 });
 
 app.listen(port, function () {

@@ -30,6 +30,11 @@ angular.module('authServices', [])
             }
         };
 
+        //AuthToken.facebook(token);
+        authFactory.facebook = function (token) {
+            AuthToken.setToken(token);
+        };
+
         return authFactory;
     })
 
